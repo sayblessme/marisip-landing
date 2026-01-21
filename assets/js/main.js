@@ -385,29 +385,15 @@ function initQuiz() {
                 }
             }
         } else {
-            // Step 7: Name and phone required
-            const nameInput = document.getElementById('quiz-name');
+            // Step 7: Only phone required
             const phoneInput = document.getElementById('quiz-phone');
-
-            let isValid = true;
-
-            if (!nameInput.value.trim()) {
-                nameInput.classList.add('error');
-                isValid = false;
-            } else {
-                nameInput.classList.remove('error');
-            }
 
             if (!isValidPhone(phoneInput.value)) {
                 phoneInput.classList.add('error');
-                isValid = false;
+                showToast('Пожалуйста, укажите номер телефона');
+                return false;
             } else {
                 phoneInput.classList.remove('error');
-            }
-
-            if (!isValid) {
-                showToast('Пожалуйста, заполните обязательные поля');
-                return false;
             }
         }
 
@@ -522,12 +508,20 @@ function initQuiz() {
         }
     });
 
-    // Allow clicking on option to select radio
+    // Allow clicking on option to select radio and auto-advance
     document.querySelectorAll('.quiz__option').forEach(option => {
         option.addEventListener('click', function() {
             const radio = this.querySelector('input[type="radio"]');
             if (radio) {
                 radio.checked = true;
+
+                // Auto-advance to next step after short delay
+                if (currentStep < totalSteps) {
+                    setTimeout(() => {
+                        currentStep++;
+                        showStep(currentStep);
+                    }, 300);
+                }
             }
         });
     });
@@ -565,26 +559,13 @@ function initContactForm() {
         const phoneInput = document.getElementById('contact-phone');
         const commentInput = document.getElementById('contact-comment');
 
-        // Validation
-        let isValid = true;
-
-        if (!nameInput.value.trim()) {
-            nameInput.classList.add('error');
-            isValid = false;
-        } else {
-            nameInput.classList.remove('error');
-        }
-
+        // Validation - only phone required
         if (!isValidPhone(phoneInput.value)) {
             phoneInput.classList.add('error');
-            isValid = false;
+            showToast('Пожалуйста, укажите номер телефона');
+            return;
         } else {
             phoneInput.classList.remove('error');
-        }
-
-        if (!isValid) {
-            showToast('Пожалуйста, заполните обязательные поля');
-            return;
         }
 
         isSubmitting = true;
