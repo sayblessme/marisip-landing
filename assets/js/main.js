@@ -35,14 +35,34 @@ function debounce(func, wait) {
  * Format phone number
  */
 function formatPhone(value) {
-    const phone = value.replace(/\D/g, '');
+    let phone = value.replace(/\D/g, '');
+
+    // Ограничиваем до 11 цифр (российский номер)
+    if (phone.length > 11) {
+        phone = phone.substring(0, 11);
+    }
+
+    // Если номер начинается с 8, заменяем на 7
+    if (phone.startsWith('8')) {
+        phone = '7' + phone.substring(1);
+    }
+
+    // Если номер не начинается с 7, добавляем 7
+    if (phone.length > 0 && !phone.startsWith('7')) {
+        phone = '7' + phone;
+        if (phone.length > 11) {
+            phone = phone.substring(0, 11);
+        }
+    }
+
     const match = phone.match(/^(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,2})(\d{0,2})$/);
 
-    if (!match) return value;
+    if (!match) return '+7 ';
 
     let result = '+7';
     if (match[2]) result += ' (' + match[2];
-    if (match[3]) result += ') ' + match[3];
+    if (match[2] && match[2].length === 3) result += ')';
+    if (match[3]) result += ' ' + match[3];
     if (match[4]) result += '-' + match[4];
     if (match[5]) result += '-' + match[5];
 
@@ -954,26 +974,13 @@ function initConsultationModals() {
         const nameInput = document.getElementById('consult-name');
         const phoneInput = document.getElementById('consult-phone');
 
-        // Validation
-        let isValid = true;
-
-        if (!nameInput.value.trim()) {
-            nameInput.classList.add('error');
-            isValid = false;
-        } else {
-            nameInput.classList.remove('error');
-        }
-
+        // Validation - только телефон обязателен
         if (!isValidPhone(phoneInput.value)) {
             phoneInput.classList.add('error');
-            isValid = false;
+            showToast('Пожалуйста, введите корректный номер телефона');
+            return;
         } else {
             phoneInput.classList.remove('error');
-        }
-
-        if (!isValid) {
-            showToast('Пожалуйста, заполните обязательные поля');
-            return;
         }
 
         isConsultSubmitting = true;
@@ -1017,26 +1024,13 @@ function initConsultationModals() {
         const nameInput = document.getElementById('mortgage-name');
         const phoneInput = document.getElementById('mortgage-phone');
 
-        // Validation
-        let isValid = true;
-
-        if (!nameInput.value.trim()) {
-            nameInput.classList.add('error');
-            isValid = false;
-        } else {
-            nameInput.classList.remove('error');
-        }
-
+        // Validation - только телефон обязателен
         if (!isValidPhone(phoneInput.value)) {
             phoneInput.classList.add('error');
-            isValid = false;
+            showToast('Пожалуйста, введите корректный номер телефона');
+            return;
         } else {
             phoneInput.classList.remove('error');
-        }
-
-        if (!isValid) {
-            showToast('Пожалуйста, заполните обязательные поля');
-            return;
         }
 
         isMortgageSubmitting = true;

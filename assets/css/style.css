@@ -479,7 +479,7 @@ ul, ol {
 }
 
 .hero__image {
-    display: none;
+    margin-top: var(--spacing-xl);
 }
 
 .hero__img {
@@ -832,7 +832,7 @@ ul, ol {
 }
 
 .mortgage__image {
-    display: none;
+    margin-top: var(--spacing-xl);
 }
 
 .mortgage__img {
@@ -966,7 +966,7 @@ ul, ol {
 }
 
 .about__image {
-    display: none;
+    margin-top: var(--spacing-xl);
 }
 
 .about__img {
@@ -1675,8 +1675,6 @@ ul, ol {
     border-radius: var(--radius-xl);
     max-width: 600px;
     width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
     animation: slideUp 0.3s ease;
 }
 
@@ -1899,7 +1897,7 @@ ul, ol {
     }
 
     .about__image {
-        display: block;
+        margin-top: 0;
     }
 
     /* Reviews */
@@ -1950,7 +1948,7 @@ ul, ol {
     }
 
     .hero__image {
-        display: block;
+        margin-top: 0;
     }
 
     /* Advantages */
@@ -1969,7 +1967,7 @@ ul, ol {
     }
 
     .mortgage__image {
-        display: block;
+        margin-top: 0;
     }
 
     /* Process */
@@ -2237,7 +2235,6 @@ ul, ol {
     /* Modal */
     .modal__content {
         margin: var(--spacing-md);
-        max-height: calc(100vh - var(--spacing-xl));
     }
 
     .modal__body {
