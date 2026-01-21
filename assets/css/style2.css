@@ -482,11 +482,6 @@ ul, ol {
     margin-top: var(--spacing-xl);
 }
 
-/* Мобильная картинка скрыта на десктопе */
-.hero__image--mobile {
-    display: none;
-}
-
 .hero__img {
     width: 100%;
     height: auto;
@@ -2216,7 +2211,7 @@ ul, ol {
         scroll-snap-align: start;
     }
 
-    /* Hero - фото под текстом */
+    /* Hero - фото над кнопками */
     .hero .container {
         display: flex;
         flex-direction: column;
@@ -2227,15 +2222,9 @@ ul, ol {
         flex-direction: column;
     }
 
-    /* Скрываем десктопную картинку на мобильных */
-    .hero > .container > .hero__image {
-        display: none;
-    }
-
-    /* Показываем мобильную картинку */
-    .hero__image--mobile {
-        display: block;
-        margin-top: var(--spacing-lg);
+    .hero__image {
+        order: -1;
+        margin-top: 0;
         margin-bottom: var(--spacing-lg);
     }
 
