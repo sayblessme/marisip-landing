@@ -483,7 +483,7 @@ ul, ol {
 }
 
 /* Мобильная картинка скрыта на десктопе */
-.hero__image--mobile {
+.hero__image-mobile {
     display: none;
 }
 
@@ -840,6 +840,11 @@ ul, ol {
     margin-top: var(--spacing-xl);
 }
 
+/* Мобильная картинка скрыта на десктопе */
+.mortgage__image-mobile {
+    display: none;
+}
+
 .mortgage__img {
     width: 100%;
     height: auto;
@@ -972,6 +977,11 @@ ul, ol {
 
 .about__image {
     margin-top: var(--spacing-xl);
+}
+
+/* Мобильная картинка скрыта на десктопе */
+.about__image-mobile {
+    display: none;
 }
 
 .about__img {
@@ -2187,11 +2197,21 @@ ul, ol {
         flex-direction: column;
     }
 
-    /* About - фото под заголовком */
+    /* About - скрываем десктопную картинку, показываем мобильную */
     .about__image {
-        order: -1;
-        margin-top: 0;
-        margin-bottom: var(--spacing-lg);
+        display: none;
+    }
+
+    .about__image-mobile {
+        display: block;
+        margin: var(--spacing-lg) 0;
+    }
+
+    .about__image-mobile .about__img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-lg);
     }
 
     /* Reviews - горизонтальный слайдер */
@@ -2216,50 +2236,38 @@ ul, ol {
         scroll-snap-align: start;
     }
 
-    /* Hero - фото под текстом */
-    .hero .container {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .hero__content {
-        display: flex;
-        flex-direction: column;
-    }
-
-    /* Скрываем десктопную картинку на мобильных */
-    .hero > .container > .hero__image {
+    /* Hero - скрываем десктопную картинку, показываем мобильную */
+    .hero__image {
         display: none;
     }
 
-    /* Показываем мобильную картинку */
-    .hero__image--mobile {
+    .hero__image-mobile {
         display: block;
-        margin-top: var(--spacing-lg);
-        margin-bottom: var(--spacing-lg);
+        margin: var(--spacing-lg) 0;
     }
 
-    .hero__buttons {
-        order: 10;
+    .hero__image-mobile .hero__img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-lg);
     }
 
-    .hero__features {
-        order: 11;
-    }
-
-    /* Mortgage - фото под текстом */
-    .mortgage__inner {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .mortgage__content {
-        order: 1;
-    }
-
+    /* Mortgage - скрываем десктопную картинку, показываем мобильную */
     .mortgage__image {
-        order: 2;
-        margin-top: var(--spacing-lg);
+        display: none;
+    }
+
+    .mortgage__image-mobile {
+        display: block;
+        margin: var(--spacing-lg) 0;
+    }
+
+    .mortgage__image-mobile .mortgage__img {
+        width: 100%;
+        height: auto;
+        border-radius: var(--radius-xl);
+        box-shadow: var(--shadow-lg);
     }
 
     /* Quiz */
