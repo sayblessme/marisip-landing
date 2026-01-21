@@ -2178,12 +2178,77 @@ ul, ol {
 
     /* About */
     .about__inner {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
     }
 
-    /* Reviews */
+    /* About - фото под заголовком */
+    .about__image {
+        order: -1;
+        margin-top: 0;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Reviews - горизонтальный слайдер */
+    .reviews__grid {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        gap: var(--spacing-md);
+        padding-bottom: var(--spacing-md);
+        margin: 0 calc(-1 * var(--spacing-md));
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+    }
+
+    .reviews__grid::-webkit-scrollbar {
+        display: none;
+    }
+
     .review-card {
-        flex: 0 0 100%;
+        flex: 0 0 85%;
+        scroll-snap-align: start;
+    }
+
+    /* Hero - фото над кнопками */
+    .hero .container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero__image {
+        order: -1;
+        margin-top: 0;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .hero__buttons {
+        order: 10;
+    }
+
+    .hero__features {
+        order: 11;
+    }
+
+    /* Mortgage - фото под текстом */
+    .mortgage__inner {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mortgage__content {
+        order: 1;
+    }
+
+    .mortgage__image {
+        order: 2;
+        margin-top: var(--spacing-lg);
     }
 
     /* Quiz */

@@ -297,6 +297,309 @@
             </div>
         </section>
 
+        <!-- Quiz Section -->
+        <section class="quiz" id="quiz">
+            <div class="container">
+                <div class="quiz__inner animate-on-scroll">
+                    <div class="quiz__header">
+                        <h2 class="quiz__title">Рассчитайте стоимость вашего дома</h2>
+                        <p class="quiz__subtitle">Ответьте на 7 вопросов и получите персональный расчёт</p>
+                    </div>
+
+                    <div class="quiz__progress">
+                        <div class="quiz__progress-bar">
+                            <div class="quiz__progress-fill" id="quiz-progress"></div>
+                        </div>
+                        <div class="quiz__progress-text">Шаг <span id="quiz-step-current">1</span> из 7</div>
+                    </div>
+
+                    <form class="quiz__form" id="quiz-form">
+                        <!-- Honeypot -->
+                        <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
+
+                        <!-- Step 1 -->
+                        <div class="quiz__step active" data-step="1">
+                            <h3 class="quiz__question">Какой дом вы рассматриваете?</h3>
+                            <div class="quiz__options">
+                                <label class="quiz__option">
+                                    <input type="radio" name="house" value="CLASSIC MINI — 36 м²" required>
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">CLASSIC MINI</span>
+                                        <span class="quiz__option-desc">36 м²</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="house" value="CLASSIC COMFORT — 48 м²">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">CLASSIC COMFORT</span>
+                                        <span class="quiz__option-desc">48 м²</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="house" value="CLASSIC FAMILY — 72 м²">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">CLASSIC FAMILY</span>
+                                        <span class="quiz__option-desc">72 м²</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="house" value="CLASSIC MAX — 96 м²">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">CLASSIC MAX</span>
+                                        <span class="quiz__option-desc">96 м²</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="house" value="Пока не определился">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Пока не определился</span>
+                                        <span class="quiz__option-desc">Помогите выбрать</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="quiz__step" data-step="2">
+                            <h3 class="quiz__question">Для каких целей вы строите дом?</h3>
+                            <div class="quiz__options">
+                                <label class="quiz__option">
+                                    <input type="radio" name="purpose" value="Для постоянного проживания" required>
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Для постоянного проживания</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="purpose" value="Дача / загородный дом">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Дача / загородный дом</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="purpose" value="Для семьи">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Для семьи</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="purpose" value="Под сдачу / инвестиции">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Под сдачу / инвестиции</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="quiz__step" data-step="3">
+                            <h3 class="quiz__question">У вас уже есть участок?</h3>
+                            <div class="quiz__options">
+                                <label class="quiz__option">
+                                    <input type="radio" name="land" value="Да, участок есть" required>
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Да, участок есть</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="land" value="В процессе покупки">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">В процессе покупки</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="land" value="Нет, нужна помощь">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Нет, нужна помощь</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="quiz__step" data-step="4">
+                            <h3 class="quiz__question">В какой комплектации нужен дом?</h3>
+                            <div class="quiz__options">
+                                <label class="quiz__option">
+                                    <input type="radio" name="package" value="Тёплый контур" required>
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Тёплый контур</span>
+                                        <span class="quiz__option-desc">Базовая комплектация</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="package" value="Комфорт">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Комфорт</span>
+                                        <span class="quiz__option-desc">С инженерией и черновой отделкой</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="package" value="Под ключ">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Под ключ</span>
+                                        <span class="quiz__option-desc">Полностью готовый дом</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="package" value="Нужна консультация">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Нужна консультация</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="quiz__step" data-step="5">
+                            <h3 class="quiz__question">Планируете ли использовать ипотеку?</h3>
+                            <div class="quiz__options">
+                                <label class="quiz__option">
+                                    <input type="radio" name="mortgage" value="Да, семейная ипотека" required>
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Да, семейная ипотека</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="mortgage" value="Да, сельская ипотека">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Да, сельская ипотека</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="mortgage" value="Нет, оплата наличными">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Нет, оплата наличными</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="mortgage" value="Пока не знаю">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Пока не знаю</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 6 -->
+                        <div class="quiz__step" data-step="6">
+                            <h3 class="quiz__question">Когда планируете начать строительство?</h3>
+                            <div class="quiz__options">
+                                <label class="quiz__option">
+                                    <input type="radio" name="timeline" value="В ближайший месяц" required>
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">В ближайший месяц</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="timeline" value="В течение 2–3 месяцев">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">В течение 2–3 месяцев</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="timeline" value="Через полгода">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Через полгода</span>
+                                    </span>
+                                </label>
+                                <label class="quiz__option">
+                                    <input type="radio" name="timeline" value="Пока выбираю">
+                                    <span class="quiz__option-content">
+                                        <span class="quiz__option-title">Пока выбираю</span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Step 7 -->
+                        <div class="quiz__step" data-step="7">
+                            <h3 class="quiz__question">Оставьте контакты, и мы рассчитаем стоимость</h3>
+
+                            <div class="quiz__fields">
+                                <div class="form-group">
+                                    <label for="quiz-name">Имя</label>
+                                    <input type="text" id="quiz-name" name="name" placeholder="Ваше имя">
+                                </div>
+                                <div class="form-group">
+                                    <label for="quiz-phone">Телефон *</label>
+                                    <input type="tel" id="quiz-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Удобный способ связи</label>
+                                    <div class="radio-group">
+                                        <label class="radio-label">
+                                            <input type="radio" name="contact_method" value="Звонок" checked>
+                                            <span>Звонок</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="contact_method" value="WhatsApp / Telegram">
+                                            <span>WhatsApp / Telegram</span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="quiz-region">Регион</label>
+                                    <select id="quiz-region" name="region">
+                                        <option value="">Выберите регион</option>
+                                        <option value="Марий Эл">Марий Эл</option>
+                                        <option value="Татарстан">Татарстан</option>
+                                        <option value="Чувашия">Чувашия</option>
+                                        <option value="Краснодарский край">Краснодарский край</option>
+                                        <option value="Другой">Другой</option>
+                                    </select>
+                                </div>
+                                <div class="form-group form-group--hidden" id="other-region-group">
+                                    <label for="quiz-region-other">Укажите ваш регион</label>
+                                    <input type="text" id="quiz-region-other" name="region_other" placeholder="Введите регион">
+                                </div>
+
+                                <div class="quiz__gift">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polyline points="20,12 20,22 4,22 4,12"/>
+                                        <rect x="2" y="7" width="20" height="5"/>
+                                        <line x1="12" y1="22" x2="12" y2="7"/>
+                                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                                    </svg>
+                                    <span>Укажите регион — и получите беседку в подарок</span>
+                                </div>
+                            </div>
+
+                            <p class="quiz__note">Расчёт стоимости и консультация — бесплатно</p>
+                        </div>
+
+                        <div class="quiz__nav">
+                            <button type="button" class="btn btn--outline quiz__btn-prev" id="quiz-prev" style="display: none;">Назад</button>
+                            <button type="button" class="btn btn--primary quiz__btn-next" id="quiz-next">Далее</button>
+                            <button type="submit" class="btn btn--primary quiz__btn-submit" id="quiz-submit" style="display: none;">Получить расчёт</button>
+                        </div>
+                    </form>
+
+                    <!-- Success Screen -->
+                    <div class="quiz__success" id="quiz-success" style="display: none;">
+                        <div class="quiz__success-icon">
+                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22,4 12,14.01 9,11.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="quiz__success-title">Спасибо за заявку!</h3>
+                        <p class="quiz__success-text">Мы свяжемся с вами в ближайшее время для расчёта стоимости.</p>
+                        <a href="assets/pdf/catalog.pdf" download class="btn btn--primary btn--lg">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                <polyline points="7,10 12,15 17,10"/>
+                                <line x1="12" y1="15" x2="12" y2="3"/>
+                            </svg>
+                            Скачать каталог (PDF)
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Packages Section -->
         <section class="packages" id="packages">
             <div class="container">
@@ -646,309 +949,6 @@
                     </a>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- Quiz Section -->
-        <section class="quiz" id="quiz">
-            <div class="container">
-                <div class="quiz__inner animate-on-scroll">
-                    <div class="quiz__header">
-                        <h2 class="quiz__title">Рассчитайте стоимость вашего дома</h2>
-                        <p class="quiz__subtitle">Ответьте на 7 вопросов и получите персональный расчёт</p>
-                    </div>
-
-                    <div class="quiz__progress">
-                        <div class="quiz__progress-bar">
-                            <div class="quiz__progress-fill" id="quiz-progress"></div>
-                        </div>
-                        <div class="quiz__progress-text">Шаг <span id="quiz-step-current">1</span> из 7</div>
-                    </div>
-
-                    <form class="quiz__form" id="quiz-form">
-                        <!-- Honeypot -->
-                        <input type="text" name="website" class="honeypot" tabindex="-1" autocomplete="off">
-
-                        <!-- Step 1 -->
-                        <div class="quiz__step active" data-step="1">
-                            <h3 class="quiz__question">Какой дом вы рассматриваете?</h3>
-                            <div class="quiz__options">
-                                <label class="quiz__option">
-                                    <input type="radio" name="house" value="CLASSIC MINI — 36 м²" required>
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">CLASSIC MINI</span>
-                                        <span class="quiz__option-desc">36 м²</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="house" value="CLASSIC COMFORT — 48 м²">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">CLASSIC COMFORT</span>
-                                        <span class="quiz__option-desc">48 м²</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="house" value="CLASSIC FAMILY — 72 м²">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">CLASSIC FAMILY</span>
-                                        <span class="quiz__option-desc">72 м²</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="house" value="CLASSIC MAX — 96 м²">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">CLASSIC MAX</span>
-                                        <span class="quiz__option-desc">96 м²</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="house" value="Пока не определился">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Пока не определился</span>
-                                        <span class="quiz__option-desc">Помогите выбрать</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Step 2 -->
-                        <div class="quiz__step" data-step="2">
-                            <h3 class="quiz__question">Для каких целей вы строите дом?</h3>
-                            <div class="quiz__options">
-                                <label class="quiz__option">
-                                    <input type="radio" name="purpose" value="Для постоянного проживания" required>
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Для постоянного проживания</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="purpose" value="Дача / загородный дом">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Дача / загородный дом</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="purpose" value="Для семьи">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Для семьи</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="purpose" value="Под сдачу / инвестиции">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Под сдачу / инвестиции</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Step 3 -->
-                        <div class="quiz__step" data-step="3">
-                            <h3 class="quiz__question">У вас уже есть участок?</h3>
-                            <div class="quiz__options">
-                                <label class="quiz__option">
-                                    <input type="radio" name="land" value="Да, участок есть" required>
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Да, участок есть</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="land" value="В процессе покупки">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">В процессе покупки</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="land" value="Нет, нужна помощь">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Нет, нужна помощь</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Step 4 -->
-                        <div class="quiz__step" data-step="4">
-                            <h3 class="quiz__question">В какой комплектации нужен дом?</h3>
-                            <div class="quiz__options">
-                                <label class="quiz__option">
-                                    <input type="radio" name="package" value="Тёплый контур" required>
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Тёплый контур</span>
-                                        <span class="quiz__option-desc">Базовая комплектация</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="package" value="Комфорт">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Комфорт</span>
-                                        <span class="quiz__option-desc">С инженерией и черновой отделкой</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="package" value="Под ключ">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Под ключ</span>
-                                        <span class="quiz__option-desc">Полностью готовый дом</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="package" value="Нужна консультация">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Нужна консультация</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Step 5 -->
-                        <div class="quiz__step" data-step="5">
-                            <h3 class="quiz__question">Планируете ли использовать ипотеку?</h3>
-                            <div class="quiz__options">
-                                <label class="quiz__option">
-                                    <input type="radio" name="mortgage" value="Да, семейная ипотека" required>
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Да, семейная ипотека</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="mortgage" value="Да, сельская ипотека">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Да, сельская ипотека</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="mortgage" value="Нет, оплата наличными">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Нет, оплата наличными</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="mortgage" value="Пока не знаю">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Пока не знаю</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Step 6 -->
-                        <div class="quiz__step" data-step="6">
-                            <h3 class="quiz__question">Когда планируете начать строительство?</h3>
-                            <div class="quiz__options">
-                                <label class="quiz__option">
-                                    <input type="radio" name="timeline" value="В ближайший месяц" required>
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">В ближайший месяц</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="timeline" value="В течение 2–3 месяцев">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">В течение 2–3 месяцев</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="timeline" value="Через полгода">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Через полгода</span>
-                                    </span>
-                                </label>
-                                <label class="quiz__option">
-                                    <input type="radio" name="timeline" value="Пока выбираю">
-                                    <span class="quiz__option-content">
-                                        <span class="quiz__option-title">Пока выбираю</span>
-                                    </span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Step 7 -->
-                        <div class="quiz__step" data-step="7">
-                            <h3 class="quiz__question">Оставьте контакты, и мы рассчитаем стоимость</h3>
-
-                            <div class="quiz__fields">
-                                <div class="form-group">
-                                    <label for="quiz-name">Имя *</label>
-                                    <input type="text" id="quiz-name" name="name" placeholder="Ваше имя" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="quiz-phone">Телефон *</label>
-                                    <input type="tel" id="quiz-phone" name="phone" placeholder="+7 (___) ___-__-__" required>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Удобный способ связи</label>
-                                    <div class="radio-group">
-                                        <label class="radio-label">
-                                            <input type="radio" name="contact_method" value="Звонок" checked>
-                                            <span>Звонок</span>
-                                        </label>
-                                        <label class="radio-label">
-                                            <input type="radio" name="contact_method" value="WhatsApp / Telegram">
-                                            <span>WhatsApp / Telegram</span>
-                                        </label>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="quiz-region">Регион</label>
-                                    <select id="quiz-region" name="region">
-                                        <option value="">Выберите регион</option>
-                                        <option value="Марий Эл">Марий Эл</option>
-                                        <option value="Татарстан">Татарстан</option>
-                                        <option value="Чувашия">Чувашия</option>
-                                        <option value="Краснодарский край">Краснодарский край</option>
-                                        <option value="Другой">Другой</option>
-                                    </select>
-                                </div>
-                                <div class="form-group form-group--hidden" id="other-region-group">
-                                    <label for="quiz-region-other">Укажите ваш регион</label>
-                                    <input type="text" id="quiz-region-other" name="region_other" placeholder="Введите регион">
-                                </div>
-
-                                <div class="quiz__gift">
-                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <polyline points="20,12 20,22 4,22 4,12"/>
-                                        <rect x="2" y="7" width="20" height="5"/>
-                                        <line x1="12" y1="22" x2="12" y2="7"/>
-                                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
-                                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
-                                    </svg>
-                                    <span>Укажите регион — и получите беседку в подарок</span>
-                                </div>
-                            </div>
-
-                            <p class="quiz__note">Расчёт стоимости и консультация — бесплатно</p>
-                        </div>
-
-                        <div class="quiz__nav">
-                            <button type="button" class="btn btn--outline quiz__btn-prev" id="quiz-prev" style="display: none;">Назад</button>
-                            <button type="button" class="btn btn--primary quiz__btn-next" id="quiz-next">Далее</button>
-                            <button type="submit" class="btn btn--primary quiz__btn-submit" id="quiz-submit" style="display: none;">Получить расчёт</button>
-                        </div>
-                    </form>
-
-                    <!-- Success Screen -->
-                    <div class="quiz__success" id="quiz-success" style="display: none;">
-                        <div class="quiz__success-icon">
-                            <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-                                <polyline points="22,4 12,14.01 9,11.01"/>
-                            </svg>
-                        </div>
-                        <h3 class="quiz__success-title">Спасибо за заявку!</h3>
-                        <p class="quiz__success-text">Мы свяжемся с вами в ближайшее время для расчёта стоимости.</p>
-                        <a href="assets/pdf/catalog.pdf" download class="btn btn--primary btn--lg">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-                                <polyline points="7,10 12,15 17,10"/>
-                                <line x1="12" y1="15" x2="12" y2="3"/>
-                            </svg>
-                            Скачать каталог (PDF)
-                        </a>
-                    </div>
-                </div>
             </div>
         </section>
 
