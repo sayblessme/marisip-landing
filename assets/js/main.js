@@ -6,12 +6,11 @@
 // ============================================
 // TELEGRAM CONFIGURATION
 // ============================================
-// ВАЖНО: Замените на свои значения!
-const TG_BOT_TOKEN = "ВСТАВИТЬ_СЮДА_ТОКЕН_БОТА";
-const TG_CHAT_ID = "ВСТАВИТЬ_СЮДА_CHAT_ID";
-
-// URL каталога (замените на реальный домен)
-const CATALOG_URL = "https://marisip.ru/assets/pdf/catalog.pdf";
+// Конфигурация загружается из config.js
+// Если CONFIG не определён, используем заглушки
+const TG_BOT_TOKEN = (typeof CONFIG !== 'undefined') ? CONFIG.TG_BOT_TOKEN : "";
+const TG_CHAT_ID = (typeof CONFIG !== 'undefined') ? CONFIG.TG_CHAT_ID : "";
+const CATALOG_URL = (typeof CONFIG !== 'undefined') ? CONFIG.CATALOG_URL : "assets/pdf/catalog.pdf";
 
 // ============================================
 // UTILITY FUNCTIONS
